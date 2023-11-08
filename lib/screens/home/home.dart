@@ -45,9 +45,9 @@ class Home extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
               child: Text(
-                'Apakah kamu sedang mencari sesuatu? Tenang saja, Kami telah menyediakan berbagai kebutuhan sehari-hari mu kok ;)',
+                'Apakah Anda sedang mencari sesuatu? Tenang saja, Kami telah menyediakan berbagai kebutuhan sehari-hari untuk Anda',
                 style: TextStyle(
-                  color: Colors.white54,
+                  color: Colors.white70,
                   height: 1.5,
                 ),
                 textAlign: TextAlign.center,
@@ -63,6 +63,47 @@ class Home extends StatelessWidget {
                       topLeft: Radius.circular(20))),
             ),
           ]),
+        ),
+        Transform.translate(
+          offset: const Offset(0, -70),
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 40),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                    offset: const Offset(0, 5),
+                    color: Theme.of(context).primaryColor.withOpacity(.2),
+                    spreadRadius: 2,
+                    blurRadius: 5),
+              ],
+            ),
+            child: Row(
+              children: [
+                const Expanded(
+                    child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Apa yang sedang anda cari?',
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                  ),
+                )),
+                Container(
+                  padding: const EdgeInsets.all(5),
+                  margin: const EdgeInsets.only(right: 10),
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).primaryColor,
+                      shape: BoxShape.circle),
+                  child: const Icon(
+                    Icons.search,
+                    color: Colors.white,
+                    size: 22,
+                  ),
+                ),
+              ],
+            ),
+          ),
         )
       ]),
     );
